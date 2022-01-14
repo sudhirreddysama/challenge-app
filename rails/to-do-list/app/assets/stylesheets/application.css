@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+td.centered-cell {
+  text-align: center;
+}
+
+td.cell-with-buttons form.button_to {
+  display: inline;
+}
+
+form.button_to button.green {
+  background-color: #1dd1a1;
+}
+
+form.button_to button.yellow {
+  background-color: #feca57;
+}
+
+form.button_to button.red {
+  background-color: #ff6b6b;
+}
+
+.fa-times.red {
+  color: #ff6b6b;
+}
+
+.fa-check.green {
+  color: #1dd1a1;
+}

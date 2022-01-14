@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :tasks
-  resources :task_lists
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'task_lists#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :task_lists, except: :show do
+    resources :tasks, except: :show
+  end
 end

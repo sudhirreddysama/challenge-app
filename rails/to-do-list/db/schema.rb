@@ -13,15 +13,15 @@
 ActiveRecord::Schema.define(version: 2022_01_12_211520) do
 
   create_table "task_lists", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tasks", force: :cascade do |t|
     t.integer "task_list_id", null: false
-    t.boolean "complete"
-    t.string "description"
+    t.boolean "complete", default: false, null: false
+    t.string "description", null: false
     t.date "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
