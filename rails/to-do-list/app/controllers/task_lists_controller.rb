@@ -16,7 +16,7 @@ class TaskListsController < ApplicationController
     @task_list = TaskList.new(task_list_params)
 
     if @task_list.save
-      redirect_to task_list_url(@task_list), notice: "Task list was successfully created."
+      redirect_to task_lists_url, notice: "Task list was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +24,7 @@ class TaskListsController < ApplicationController
 
   def update
     if @task_list.update(task_list_params)
-      redirect_to task_list_url(@task_list), notice: "Task list was successfully updated."
+      redirect_to task_lists_url, notice: "Task list was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
