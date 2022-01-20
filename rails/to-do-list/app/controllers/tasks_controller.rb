@@ -19,7 +19,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to task_list_tasks_path(@task_list), notice: "Task was successfully created."
+      redirect_to edit_task_list_tasks_path(@task_list, @task), notice: "Task was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
 
-    redirect_to task_list_tasks_url(@task_list), notice: "Task was successfully destroyed."
+    redirect_to task_lists_url(), notice: "Task was successfully destroyed."
   end
 
   private
