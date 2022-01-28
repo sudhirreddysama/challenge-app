@@ -3,7 +3,9 @@
 module AutoCompletable
   extend ActiveSupport::Concern
 
-  after_validation :autocomplete, on: :create
+  included do
+    after_validation :autocomplete, on: :create
+  end
 
   def autocomplete
     self.complete = true
